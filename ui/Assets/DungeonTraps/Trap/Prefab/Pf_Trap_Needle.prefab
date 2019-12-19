@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 3315018}
   - component: {fileID: 2315018}
   - component: {fileID: 6515020}
+  - component: {fileID: 114076772711763042}
   m_Layer: 0
   m_Name: Needle
-  m_TagString: Untagged
+  m_TagString: "\u9677\u9631"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,8 +59,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.09553218, y: 0.5, z: -1.0883064}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 415018}
   - {fileID: 415020}
@@ -183,11 +184,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115018}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.52995527, y: 0.5085304, z: 0.5162337}
-  m_Center: {x: 0.0019949228, y: 0.24579579, z: -0.002992615}
+  m_Size: {x: 0.5299553, y: 0.1927679, z: 0.5162337}
+  m_Center: {x: 0.0019949197, y: 0.08791452, z: -0.0029926063}
 --- !u!111 &11115020
 Animation:
   m_ObjectHideFlags: 1
@@ -217,3 +218,15 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115016}
   m_IsPrefabAsset: 1
+--- !u!114 &114076772711763042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16cc39b63444aa64e877be85fe32d04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
