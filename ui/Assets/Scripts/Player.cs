@@ -14,6 +14,10 @@ public class Player : MonoBehaviour {
     public Text textTime;
     public float gameTime;
 
+    public GameObject final;
+    public Text textBest;
+    public Text textCurrent;
+
     private void OnTriggerEnter(Collider other)
     {
         print(other.gameObject);
@@ -34,7 +38,7 @@ public class Player : MonoBehaviour {
 
         if(other.name == "終點" && chickenCount == chickenTotal)
         {
-            print("過關");
+            GameOver();
         }
  
     }
@@ -50,6 +54,11 @@ public class Player : MonoBehaviour {
     }
     private void Start()
     {
+        if (PlayerPrefs.GetFloat("最佳紀錄") == 0)
+        {
+            PlayerPrefs.SetFloat("最佳紀錄", 99999);
+
+        }
         chickenTotal = GameObject.FindGameObjectsWithTag("雞腿").Length;
         textChicken.text = "Chicken : 0/" + chickenTotal;
 
@@ -64,5 +73,20 @@ public class Player : MonoBehaviour {
     {
         gameTime += Time.deltaTime;
         textTime.text = gameTime.ToString("F2");
+    }
+
+    private void GameOver()
+    {
+        final.SetActive(true);
+        textCurrent.text = "TIME : " + gameTime.ToString("F2");
+
+        if (gameTime < PlayerPrefs.GetFloat("最佳紀錄"))
+        {
+            PlayerPrefs.SetFloat("最佳紀錄", gameTime);
+        }
+
+        textBest.text = "BEST : " + PlayerPrefs.GetFloat("最佳紀錄").ToString("F2");
+
+        Cursor.lockState = CursorLockMode.None;
     }
 }
