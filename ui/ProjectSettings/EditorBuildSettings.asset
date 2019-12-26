@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: "Assets/\u9078\u55AE.unity"
     guid: 8cd77adf179ea024a85f70267f0fbbf3
   - enabled: 1
-    path: "Assets/Low Poly FPS Pack - Free (Sample)/Demo_Scenes/Weapon_Demo_Scenes/Assault_Rifle_01_Demo/\u5834\u666F.unity"
-    guid: 5923bb0107620bc46b2727a5d3f12141
+    path: "Assets/\u904A\u6232\u5834\u666F.unity"
+    guid: 399bec326144d334084c6c5a09cf6894
   m_configObjects: {}

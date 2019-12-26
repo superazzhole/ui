@@ -27,6 +27,8 @@ public class Player : MonoBehaviour {
             int d = other.GetComponent<Trap>().damage;
             hp -= d;
             hpSlider.value = hp;
+            if (hp <= 0) Dead();
+
         }
         if (other.tag == "雞腿")
         {
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour {
             int d = other.GetComponent<Trap>().damage;
             hp -= d;
             hpSlider.value = hp;
+            if (hp <= 0) Dead();
         }
 
     }
@@ -75,6 +78,16 @@ public class Player : MonoBehaviour {
         textTime.text = gameTime.ToString("F2");
     }
 
+    private void Dead()
+    {
+        final.SetActive(true);
+        textCurrent.text = "TIME : " + gameTime.ToString("F2");
+        textBest.text = "BEST : " + PlayerPrefs.GetFloat("最佳紀錄").ToString("F2");
+        Cursor.lockState = CursorLockMode.None;
+
+        GetComponent<FPSControllerLPFP.FpsControllerLPFP>().enabled = false;
+        enabled = false;
+    }
     private void GameOver()
     {
         final.SetActive(true);
